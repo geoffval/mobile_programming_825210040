@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pertemuan3/navigation.dart';
 import 'stopwatch.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -27,10 +28,9 @@ class _LoginScreenState extends State<LoginScreen> {
     final email = _emailController.text;
 
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => StopWatch(name:name, email:email)),
+      MaterialPageRoute(builder: (_) => NavigationExample(name:name, email:email)),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {

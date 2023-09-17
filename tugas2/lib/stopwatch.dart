@@ -2,10 +2,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class StopWatch extends StatefulWidget {
-  final String name;
-  final String email;
+  //final String name;
+  //final String email;
 
-  const StopWatch({Key? key,required this.name,required this.email}) :super(key: key);
+  //const StopWatch({Key? key,required this.name,required this.email}) :super(key: key);
 
   @override
   State createState() => StopWatchState();
@@ -32,7 +32,7 @@ class StopWatchState extends State<StopWatch> {
   void _onTick(Timer time){
     setState(() {
       //++seconds;
-      milliseconds -= 100;
+      milliseconds += 100;
     });
   }
 
@@ -89,7 +89,7 @@ class StopWatchState extends State<StopWatch> {
   Widget build ( BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.name),
+        title: Text("Stopwatch"),
       ),
       body: Column(
         children: <Widget>[
