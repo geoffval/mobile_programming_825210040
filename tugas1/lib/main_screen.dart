@@ -30,7 +30,7 @@ class screenFrame extends StatelessWidget {
                       child: Text(
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black45, decoration: TextDecoration.none, fontFamily: 'Arima'),
                         "Kandersteg, Switzerland",
-                      ),
+                      ),''
                     ),
                   ],
                 ),
