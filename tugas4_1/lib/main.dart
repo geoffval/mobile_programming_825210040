@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Shared Preferences Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
         visualDensity: VisualDensity
             .adaptivePlatformDensity,
       ),
@@ -43,7 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     'You have opened the app ' + appCounter.toString() +
                         ' times.'),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    deletePreference();
+                  },
                   child: Text('Reset counter'),
                 )],)),
 
@@ -64,6 +66,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
     setState(() {
       appCounter = appCounter;
+    });
+  }
+
+  Future deletePreference() async {
+    SharedPreferences prefs = await
+    SharedPreferences.getInstance();
+    await prefs.clear();
+    setState(() {
+      appCounter = 0;
     });
   }
   }
